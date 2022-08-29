@@ -1,0 +1,155 @@
+body{
+  background: pink;
+  background: pink;
+  background:grey;
+  font-size: larger;
+  color: white;
+}
+
+header{
+  background: black;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+h1{
+  padding-top: 30px;
+  background-color: grey;
+  padding-bottom: 30px;
+}
+
+.compra-02{
+  background: grey;
+}
+
+.compra-03{
+  text-align: center;
+}
+
+.item {
+  border: 2px white;
+  padding: 10px;
+  border-radius: 20px;
+  
+}
+
+.item-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+}
+
+.kilo{
+  font-weight: 600;
+}
+
+
+.item-image {
+  max-height: 290px;
+  width: 100%;
+}
+
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px 15px;
+}
+
+.item-details > .item-price {
+  margin: 0;
+}
+.shopping-cart{
+  margin-left: 20%;
+}
+@media (max-width: 800px) {
+  .shopping-cart{
+    margin-left: 0;
+  }
+}
+/* ? SHOPPING CART */
+.shopping-cart-items {
+  padding: 20px 0px;
+
+}
+
+.shopping-cart-header {
+  border-bottom: 1px solid #ccc;
+
+}
+
+.shopping-cart-image {
+  max-width: 80px;
+  border-radius: 20px;
+}
+
+.shopping-cart-quantity-input {
+  max-width: 45px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #eee;
+  padding: 5px;
+}
+
+.shopping-cart-total {
+  min-height: 96px;
+
+}
+.shoppingCartTotal{
+  margin-left: 0.5%;
+}
+.padding__btn{
+  margin-left: 2%;
+}
+
+.procesador{
+  color: white;
+  margin-top: 5%;
+}
+.tabla-index{
+  color: white !important ;
+  width: 50% !important;
+}
+.table-compra{
+  color: white !important ;
+}
+span{
+  display: flex;
+  
+}
+.shoppingCartItem{
+  width: 100%;
+}
+h5{
+  border: black solid 2px gray;
+  display: inline-block;
+  background-color: tomato;
+}
+h4{
+  padding-left: 7px;
+}
+.item-button{
+ margin-left: 7px;
+
+}
+input{
+  background-color: black;
+}
+.btn-dark{
+  background-color: #820F78 !important;
+  border-color: #820F78 !important;
+}
+.alertify-notifier .ajs-message.ajs-error{
+  color: black !important;
+  font-weight: 200;
+  border: none !important;
+}
+.alertify-notifier .ajs-message.ajs-success {
+  color: black !important;
+  font-weight: 200;
+  border: none !important;
+}
+.font-comic{
+  font-family: 'Roboto';
+  font-weight: 200;
+}
