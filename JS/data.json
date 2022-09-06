@@ -1,0 +1,27 @@
+[
+
+    { "id": 0, "name": "Cabalgata","price": 699.99, "instock": 100, "imgSrc": "../img/cabalgata.jpg"},
+
+   { "id": 1, "name": "Tirolesa", "price": 790.99, "instock": 430, "imgSrc": "../img/Tirolesa.jpg"},
+
+    { "id": 2, "name": "Rafting", "price": 790.99, "instock": 430, "imgSrc": "../img/Rafting.jpg"},
+
+    { "id": 3, "name": "Buceo", "price": 790.99, "instock": 430, "imgSrc": "../img/Buceo.jpg"},
+
+    { "id": 4, "name": "Parapente", "price": 790.99, "instock": 430, "imgSrc": "../img/Parapente.jpg"},
+
+    { "id": 5, "name": "Bike", "price": 790.99, "instock": 430, "imgSrc": "../img/Bike.jpg"},
+
+    { "id": 6, "name": "Padle", "price": 790.99, "instock": 430, "imgSrc": "../img/Padle.jpg"},
+
+    { "id": 7, "name": "Treking", "price": 790.99, "instock": 430, "imgSrc": "../img/Treking.jpg"},
+
+    { "id": 8, "name": "Kayak", "price": 790.99, "instock": 430, "imgSrc": "../img/kayak.jpg"},
+
+    { "id": 9, "name": "Kite", "price": 790.99, "instock": 430, "imgSrc": "../img/kite.jpg"},
+
+    { "id": 10, "name": "Navegacion", "price": 790.99, "instock": 430, "imgSrc": "../img/Navegacion.jpg"},
+
+    { "id": 11, "name": "Pesca", "price": 790.99, "instock": 430, "imgSrc": "../img/Pesca.jpg"}
+
+    ]

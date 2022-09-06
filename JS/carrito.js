@@ -11,9 +11,9 @@ class carritoDeCompras {
   leerDatosProducto(producto) {
     //objeto del producto seleccionado
     const infoProducto = {
-      imagen: producto.querySelector("img").src,
-      titulo: producto.querySelector("h3").textContent,
-      precio: producto.querySelector("h4").textContent,
+      imgSrc: producto.querySelector("img").src,
+      name: producto.querySelector("h3").textContent,
+      price: producto.querySelector("h4").textContent,
       id: producto.querySelector("a").getAttribute("itemid"),
       cantidad: 1,
     };
@@ -37,13 +37,46 @@ class carritoDeCompras {
     }
   }
 
+  const renderProdcuts = async () =>{
+
+    try{
+      const response = await fetch("data.json");
+      const productsLista = await response.json();
+
+      productsLista.forEach((product) => {
+      productsEl.innerHTML += `
+                <div class="item">
+                    <div class="item-container" data-aos="fade-up">
+                        <div class="item-img">
+                            <img src="${product.imgSrc}" alt="${product.name}">
+                        </div>
+                        <div class="desc">
+                            <h2>${product.name}</h2>
+                            <h2><small>$</small>${product.price}</h2>
+                        </div>
+                        <div class="add-to-cart" onclick="addToCart(${product.id})">
+                            <img src="../img/cart.png" alt="add to cart">
+                        </div>
+                    </div>
+                </div>
+            `;
+      });
+    }catch (error){
+      console.log(error)
+    }
+  }
+
+  //Ejecuto mi funcion de renderizar los productos 
+  renderProdcuts();
+
+
   //--PONER PRODUCTO EN EL CARRITO
   insertarCarrito(infoProducto) {
     $("#carrito").append(`
             <tr>
-                <td><img src="${infoProducto.imagen}" style="width: 50px;"></td>
-                <td>${infoProducto.titulo.toUpperCase()}</td>
-                <td>${infoProducto.precio}</td>
+                <td><img src="${infoProducto.imgSrc}" style="width: 50px;"></td>
+                <td>${infoProducto.name.toUpperCase()}</td>
+                <td>${infoProducto.price}</td>
                 <td><a href="#" class="borrar-producto btn btn-danger" itemid="${
                   infoProducto.id
                 }">X</a> </td> 
@@ -113,10 +146,10 @@ class carritoDeCompras {
       $("#carrito").append(`
                 <tr>
                     <td><img src="${
-                      infoProducto.imagen
+                      infoProducto.imgSrc
                     }" style="width: 50px;"></td>
                     <td>${infoProducto.titulo.toUpperCase()}</td>
-                    <td>${infoProducto.precio}</td>
+                    <td>${infoProducto.price}</td>
                     <td><a href="#" class="borrar-producto btn btn-danger" itemid="${
                       infoProducto.id
                     }">X</a> </td> 
@@ -146,7 +179,7 @@ class carritoDeCompras {
       $("#lista-procesada").append(`
                 <tr>
                     <td>
-                        <img src="${producto.imagen}" width = 100>
+                        <img src="${producto.imgSrc}" width = 100>
                     </td>
                     <td>${producto.titulo.toUpperCase()}</td>
                     <td>${precioSinSigno}</td>
@@ -176,7 +209,7 @@ class carritoDeCompras {
 
     productoLS = this.obtenerProductosLocalStorage();
     for (let i = 0; i < productoLS.length; i++) {
-      let element = Number(productoLS[i].precio * productoLS[i].cantidad);
+      let element = Number(productoLS[i].price * productoLS[i].cantidad);
       total = total + element;
     }
     impuestos = parseFloat(total * 0.21).toFixed(2);
@@ -201,7 +234,7 @@ class carritoDeCompras {
         if (productoLS.id === id) {
           productoLS.cantidad = cantidad;
           actualizarMontos[index].innerHTML = Number(
-            cantidad * productosLS[index].precio
+            cantidad * productosLS[index].price
           ).toFixed(2);
         }
       });
